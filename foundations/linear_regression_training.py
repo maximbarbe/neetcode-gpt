@@ -24,7 +24,7 @@ class Solution:
         for i in range(num_iterations):
             preds = self.get_model_prediction(X, weights)
             
-            gradient = self.get_derivative(preds, Y, len(X), X, [0, 1, 2])
+            gradient = self.get_derivative(preds, Y, len(X), X, [i for i in range(X.shape[1])])
             weights -= self.learning_rate * gradient
         # For each iteration:
         #   1. Compute predictions with get_model_prediction(X, weights)
